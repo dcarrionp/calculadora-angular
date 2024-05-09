@@ -1,0 +1,80 @@
+.container {
+    width: 90%;
+    margin: 0 auto;
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header {
+    background-color: #6B9080;
+    color: #fff;
+    
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+    nav ul li {
+        display: inline;
+        margin-right: 20px;
+    }
+
+        nav ul li a {
+            color: #F6FFF8;
+            text-decoration: none;
+            transition: color 0.3s ease; /* Transición suave para el cambio de color */
+        }
+
+            nav ul li a:hover {
+                color: #A4C3B2; /* Cambio de color al pasar el mouse */
+            }
+
+.section {
+    padding: 20px;
+}
+
+/* Styling for the espacio_tiempo section */
+.espacio_tiempo {
+    background-color: #6B9080; /* Similar to the header background */
+    color: #fff; /* White text for contrast */
+    padding: 20px;
+    border-radius: 10px; /* Rounded corners for a softer look */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+    display: flex;
+    flex-direction: column; /* Arrange buttons vertically */
+    align-items: flex-start; /* Left-align content */
+    margin: 20px 0; /* Separate section from others */
+}
+
+/* Time text styling */
+.espacio_tiempo .time {
+    font-weight: bold;
+    color: black; /* Greenish accent for time */
+    margin-left: 10px;
+}
+
+/* Button styling similar to nav links */
+.espacio_tiempo button {
+    background-color: black; /* Greenish background */
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    margin: 10px 0;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.espacio_tiempo button:hover {
+    background-color: #F6FFF8; /* Lighter shade on hover */
+    color: #6B9080; /* Text color that contrasts */
+}
+
+.espacio_tiempo p {
+    font-size: 18px;
+    margin-bottom: 20px; /* Space below the paragraph */
+}

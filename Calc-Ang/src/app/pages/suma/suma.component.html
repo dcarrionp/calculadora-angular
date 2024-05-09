@@ -1,0 +1,7 @@
+    <h2>Calculadora de Suma</h2>
+    <div class="calculator">
+        <input type="number" id="sum1" [(ngModel)]="sum1">
+        <input type="number" id="sum2" [(ngModel)]="sum2">
+        <button (click)="calculateSum()">Sumar</button>
+        <p>Resultado: {{ sumResult }}</p>
+    </div>

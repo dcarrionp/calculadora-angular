@@ -1,1 +1,24 @@
-<p>header works!</p>
+<header>
+    <div class="container">
+        <h1>Calculadora</h1>
+        <nav>
+            <ul>
+                <li><a routerLink="inicio">Inicio</a></li>
+                <li><a routerLink="acercade">Acerca de</a></li>
+                <li><a routerLink="suma">Suma</a></li>
+                <li><a routerLink="resta">Resta</a></li>
+                <li><a routerLink="multi">Multiplicación</a></li>
+                <li><a routerLink="div">División</a></li>
+                <li><a routerLink="post">Post</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="espacio_tiempo">
+        <p> Tiempo de Conexion de: <strong>{{usuario}}</strong><strong class="time">{{tiempoConexion}}</strong>
+        <app-session [intervalo]="1" (tiempo)="actualizar($event) " #tiempoSesion></app-session>
+        <button (click)="tiempoSesion.reset()" class="inter1">Reset</button>
+        <button (click)="nuevoIntervalo(1)" class="inter2">1</button>
+        <button (click)="nuevoIntervalo(3)" class="inter3">3</button>
+        <button (click)="nuevoIntervalo(5)" class="inter4">5</button></p>
+    </div>
+</header>

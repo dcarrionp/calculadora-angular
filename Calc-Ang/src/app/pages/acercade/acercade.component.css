@@ -1,0 +1,66 @@
+/* Styles for the overall body and layout */
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f3f3f3; /* Light gray background */
+    font-family: Arial, sans-serif;
+    color: #333; /* Text color */
+    line-height: 1.6;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Headings and labels */
+h1, h2, h3, label {
+    color: #2c3e50; /* Darker blue color */
+    margin-bottom: 10px;
+}
+
+/* Input styles */
+input {
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #bdc3c7; /* Gray border */
+    width: 60%;
+    max-width: 300px;
+    box-sizing: border-box;
+}
+
+/* Button styles */
+button {
+    background-color: #3498db; /* Blue background */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+button:hover {
+    background-color: #2980b9; /* Darker blue on hover */
+}
+
+/* Unordered list and list items */
+ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+    width: 100%;
+    max-width: 400px;
+}
+
+li {
+    background-color: #ecf0f1; /* Light background for list items */
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border-left: 5px solid #3498db; /* Blue side border */
+    text-align: left;
+}

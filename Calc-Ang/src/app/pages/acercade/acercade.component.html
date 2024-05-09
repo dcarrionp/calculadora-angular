@@ -1,0 +1,32 @@
+<body>
+    Las operaciones matemáticas son procedimientos que combinan números o variables 
+    para obtener un resultado. <br> 
+    Operaciones básicas:
+    <ul>
+        <li>Suma</li>
+        <li>Resta</li>
+        <li>Multiplicacion</li>
+        <li>Division</li>
+    </ul>
+    Estas son esenciales para manipular cantidades. 
+    También existen operaciones más avanzadas: 
+    <ul>
+        <li>Exponenciación</li>
+        <li>Radicación</li>
+        <li>Logaritmos</li>
+    </ul>    
+    que son fundamentales para el álgebra, 
+    geometría y cálculo. <br>
+    Estas operaciones permiten resolver problemas, describir relaciones y modelar fenómenos 
+    en ciencias e ingeniería.<br>
+    <label for="txtMsg">Mensaje nuevo:</label>
+    <input id="txtMsg" name="txtMsg" [(ngModel)] = "msg"><br>
+    {{msg}}<br>
+    <button (click)="agregar()">Agregar</button>
+    <button (click)="limpiar()">Limpiar</button>
+    <ul>
+        @for(msg of messages; track msg){
+            <li>{{msg}}</li>
+        }
+    </ul>
+</body>

@@ -1,0 +1,34 @@
+<body>
+    <h1>Bienvenido a <p>Web-Matematicas</p></h1>
+</body>
+
+<h2>Calculadora</h2>
+<div class="calculator">
+    <input type="text" id="display" #displayInput readonly>
+    <div class="buttons">
+        <button (click)="appendToDisplay('1')">1</button>
+        <button (click)="appendToDisplay('2')">2</button>
+        <button (click)="appendToDisplay('3')">3</button>
+        <button (click)="appendToDisplay('+')">+</button>
+        <button (click)="appendToDisplay('4')">4</button>
+        <button (click)="appendToDisplay('5')">5</button>
+        <button (click)="appendToDisplay('6')">6</button>
+        <button (click)="appendToDisplay('-')">-</button>
+        <button (click)="appendToDisplay('7')">7</button>
+        <button (click)="appendToDisplay('8')">8</button>
+        <button (click)="appendToDisplay('9')">9</button>
+        <button (click)="appendToDisplay('*')">*</button>
+        <button (click)="appendToDisplay('0')">0</button>
+        <button (click)="appendToDisplay('.')">.</button>
+        <button (click)="appendToDisplay('/')">/</button>
+        <button (click)="clearDisplay()">C</button>
+        <button (click)="calculate()">=</button>
+    </div>
+</div>
+
+<h3>Historial de Operaciones:</h3>
+<ul>
+  <li *ngFor="let msg of messages">{{ msg }}</li>
+</ul>
+
+<button (click)="clearHistorial()">Limpiar Historial</button>
