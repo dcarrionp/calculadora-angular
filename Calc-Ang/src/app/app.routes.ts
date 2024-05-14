@@ -14,5 +14,5 @@ export const routes: Routes = [
     {path:"multi", component: MultiplicacionComponent},
     {path:"div", component: DivisionComponent},
     {path:"acercade", component: AcercadeComponent},
-    {path:"post", component: PostComponent},
+    {path:"post", component: PostComponent}
 ];

@@ -40,11 +40,4 @@ export class PostComponent {
           }
       }
   }
-
-
-
-
-
-
-
 }

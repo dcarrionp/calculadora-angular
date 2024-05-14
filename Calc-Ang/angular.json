@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "Calc-Ang": {
+    "calc-ang": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -57,10 +57,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "Calc-Ang:build:production"
+              "buildTarget": "calc-ang:build:production"
             },
             "development": {
-              "buildTarget": "Calc-Ang:build:development"
+              "buildTarget": "calc-ang:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -68,7 +68,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "Calc-Ang:build"
+            "buildTarget": "calc-ang:build"
           }
         },
         "test": {
@@ -88,6 +88,23 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "version": 2
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "calc-ang:build:production",
+              "serveTarget": "calc-ang:serve:production"
+            },
+            "development": {
+              "buildTarget": "calc-ang:build:development",
+              "serveTarget": "calc-ang:serve:development"
+            }
+          },
+          "defaultConfiguration": "production"
         }
       }
     }

@@ -8,7 +8,7 @@ import { HttpClientModule } from '@angular/common/http';
   standalone: true,
   imports: [HttpClientModule],
   templateUrl: './post.component.html',
-  styleUrl: './post.component.scss'
+  styleUrls: ['./post.component.scss']
 })
 export class PostComponent {
   post : any
@@ -41,7 +41,14 @@ export class PostComponent {
       }
   }
 
+toggleInfo(msg: any): void {
+  msg.show = !msg.show;
+}
 
+// Optional: Track by the unique ID
+trackByMsgId(index: number, item: any): number {
+  return item.id;
+}
 
 
 
