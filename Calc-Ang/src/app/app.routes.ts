@@ -16,3 +16,4 @@ export const routes: Routes = [
     {path:"acercade", component: AcercadeComponent},
     {path:"post", component: PostComponent}
 ];
+    
