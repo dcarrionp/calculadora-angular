@@ -1,17 +1,16 @@
 {
-  "firestore": {
-    "rules": "firestore.rules",
-    "indexes": "firestore.indexes.json"
-  },
   "hosting": {
-    "source": ".",
+    "public": "dist/calc-ang/browser",
     "ignore": [
       "firebase.json",
-      "/.*",
-      "/node_modules/"
+      "**/.*",
+      "**/node_modules/**"
     ],
-    "frameworksBackend": {
-      "region": "us-east1"
-    }
-  }
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
 }
