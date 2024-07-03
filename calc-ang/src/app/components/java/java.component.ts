@@ -12,10 +12,11 @@ import { ServiceJavaService } from '../../services/service-java.service';
   imports: [CommonModule, FormsModule]
 })
 export class JavaComponent implements OnInit {
-  
+
   selectedCliente: Cliente = { cedula: '', direccion: '', nombre: '' };
   clientes: Cliente[] = [];
   result: any;
+  isEdit: boolean = false;
 
   constructor(private clientesService: ServiceJavaService) { }
 
@@ -43,6 +44,21 @@ export class JavaComponent implements OnInit {
     });
   }
 
+  actualizarCliente(cliente: Cliente): void {
+    console.log('Actualizando cliente:', cliente);
+    this.clientesService.updateCliente(cliente).subscribe({
+      next: data => {
+        this.result = data;
+        console.log('Cliente actualizado:', this.result);
+        this.resetForm();
+        this.getAllClientes(); // Refresca la lista de clientes después de actualizar uno
+      },
+      error: err => {
+        console.error('Error al actualizar el cliente:', err);
+      }
+    });
+  }
+
   getAllClientes(): void {
     this.clientesService.getAllClientes().subscribe({
       next: data => {
@@ -51,6 +67,23 @@ export class JavaComponent implements OnInit {
       },
       error: err => {
         console.error('Error al obtener los clientes:', err);
+      }
+    });
+  }
+
+  editarCliente(cliente: Cliente): void {
+    this.selectedCliente = { ...cliente };
+    this.isEdit = true;
+  }
+
+  eliminarCliente(cedula: string): void {
+    this.clientesService.deleteCliente(cedula).subscribe({
+      next: () => {
+        console.log('Cliente eliminado');
+        this.getAllClientes(); // Refresca la lista de clientes después de eliminar uno
+      },
+      error: err => {
+        console.error('Error al eliminar el cliente:', err);
       }
     });
   }

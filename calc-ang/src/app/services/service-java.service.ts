@@ -15,7 +15,15 @@ export class ServiceJavaService {
     return this.http.post<Cliente>(this.baseUrl, cliente);
   }
 
-  getAllClientes(): Observable<Cliente[]> {
-    return this.http.get<Cliente[]>(this.baseUrl);
+  getAllClientes() {
+    let url = this.baseUrl + "/list"
+    return this.http.get<any>(url)
   }
+
+  
+  updateCliente(cliente: Cliente): Observable<Cliente> {
+    return this.http.put<Cliente>(this.baseUrl, cliente);
+  }
+
+
 }

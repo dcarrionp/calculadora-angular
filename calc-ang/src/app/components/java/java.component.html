@@ -1,28 +1,24 @@
-<div>
-    <h2>Crear Cliente</h2>
+<div class="container">
+    <form (ngSubmit)="onSubmit()" class="form-container">
+        <label for="cedula">Cédula:</label>
+        <input type="text" id="cedula" [(ngModel)]="selectedCliente.cedula" name="cedula" required [disabled]="isEdit">
 
-    <!-- Formulario para crear cliente -->
-    <form (ngSubmit)="onSubmit()">
-        <div>
-            <label for="cedula">Cédula:</label>
-            <input type="text" id="cedula" [(ngModel)]="selectedCliente.cedula" name="cedula" required>
-        </div>
-        <div>
-            <label for="direccion">Dirección:</label>
-            <input type="text" id="direccion" [(ngModel)]="selectedCliente.direccion" name="direccion" required>
-        </div>
-        <div>
-            <label for="nombre">Nombre:</label>
-            <input type="text" id="nombre" [(ngModel)]="selectedCliente.nombre" name="nombre" required>
-        </div>
-        <button type="submit">Guardar</button>
-        <button type="button" (click)="resetForm()">Cancelar</button>
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" [(ngModel)]="selectedCliente.nombre" name="nombre" required>
+
+        <label for="direccion">Dirección:</label>
+        <input type="text" id="direccion" [(ngModel)]="selectedCliente.direccion" name="direccion" required>
+
+        <button type="submit">{{ isEdit ? 'Actualizar' : 'Guardar' }}</button>
     </form>
 
-    <h2>Lista de Clientes</h2>
-    <ul>
-        <li *ngFor="let cliente of clientes">
-            {{ cliente.cedula }} - {{ cliente.nombre }} - {{ cliente.direccion }}
-        </li>
-    </ul>
+    <div class="clientes-list">
+        <div *ngFor="let cliente of clientes" class="cliente-item">
+            <span>{{ cliente.nombre }} - {{ cliente.cedula }}</span>
+            <div class="cliente-buttons">
+                <button (click)="editarCliente(cliente)">Editar</button>
+                <button (click)="eliminarCliente(cliente.cedula)">Eliminar</button>
+            </div>
+        </div>
+    </div>
 </div>
