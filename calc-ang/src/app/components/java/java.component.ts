@@ -76,16 +76,17 @@ export class JavaComponent implements OnInit {
     this.isEdit = true;
   }
 
-  eliminarCliente(cedula: string): void {
-    this.clientesService.deleteCliente(cedula).subscribe({
-      next: () => {
+  eliminarCliente(cedula: string) {
+    this.clientesService.deleteCliente(cedula).subscribe(
+      () => {
         console.log('Cliente eliminado');
-        this.getAllClientes(); // Refresca la lista de clientes después de eliminar uno
+        this.clientes = this.clientes.filter(cliente => cliente.cedula !== cedula);
       },
-      error: err => {
-        console.error('Error al eliminar el cliente:', err);
+      error => {
+        console.error('Error al eliminar el cliente', error);
+        this.getAllClientes();
       }
-    });
+    );
   }
 
   resetForm(): void {
