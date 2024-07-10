@@ -28,7 +28,10 @@ export class ServiceJavaService {
   }
 
   updateCliente(cliente: Cliente): Observable<Cliente> {
-    return this.http.put<Cliente>(this.baseUrl, cliente);
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json'
+    });
+    return this.http.put<Cliente>(this.baseUrl, cliente)
   }
 
   deleteCliente(cedula: string): Observable<void> {
